@@ -31,11 +31,14 @@ for (let i = 0; i < toDosList.length; i++) {
     if (workHours.hour() < currentHour) {
         $('#toDos' + i).addClass('past');
         $('#toDos' + i).attr("placeholder", "time has passed already");
+        $('#toDos' + i).prev().css('color', 'gray');
     } else if (workHours.hour() > currentHour) {
         $('#toDos' + i).addClass('future');
         $('#toDos' + i).attr("placeholder", "plan now!");
+        $('#toDos' + i).prev().css('color', 'lightgreen');
     } else {
         $('#toDos' + i).addClass('present');
+        $('#toDos' + i).prev().css('color', 'red');
     }
 
     $("#toDos" + i).val(toDosList[i]);
