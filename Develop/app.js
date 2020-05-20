@@ -1,6 +1,3 @@
-// setting up a moment object variable 
-let m = moment();
-
 // current day, month, day, year, time time running the seconds
 $("#currentDay").text(moment().format("MMMM Do YYYY hh:mm:ss A"));
 
