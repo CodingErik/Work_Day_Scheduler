@@ -13,6 +13,10 @@ setInterval(function () {
 let toDosList = ['', '', '', '', '', '', '', '', '', '']
 
 
+
+// calling the function so if there is any persisted we can repopulate it
+persist();
+
 // display the time and set the conditions 
 for (let i = 0; i < toDosList.length; i++) {
     
@@ -43,35 +47,24 @@ for (let i = 0; i < toDosList.length; i++) {
 
 $('.saveBtn').on('click', function (event) {
 
+    // this is linked directly to the buttons 
     let index = event.target.value;
 
     // testing the index
-    console.log(index);
+    // console.log(index);
 
-    // toDosList[index] = $('#toDos' + index)
+    // assign the value to the array so we can then persist the data
+    toDosList[index] = $('#toDos' + index).val();
 
-    // localStorage.setItem('arr', JSON.stringify(toDos));
-
+    // persist the data 
+    localStorage.setItem('toDosList', JSON.stringify(toDosList));
 
 });
 
 
 
-
-
-
-
-
-
-
-
-// let arr = [23,6,3,6,3,6,8,4,];
-
-// localStorage.setItem('myNumbers', JSON.stringify(arr));
-
-
-// console.log(JSON.parse(localStorage.getItem('myNumbers')))
-
-
-
+// this function get us the data that has been persisted d
+function persist(){
+    JSON.parse(localStorage.getItem('toDosList'));
+};
 
