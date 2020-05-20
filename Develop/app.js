@@ -17,9 +17,10 @@ let toDosList = ['', '', '', '', '', '', '', '', '', '']
 // calling the function so if there is any persisted we can repopulate it
 persist();
 
+
 // display the time and set the conditions 
 for (let i = 0; i < toDosList.length; i++) {
-    
+
     let workHours = moment({ hour: 8 + i })
     let currentHour = moment().hour();
     // test variable to make sure the if conditional if else statements are working 
@@ -28,7 +29,7 @@ for (let i = 0; i < toDosList.length; i++) {
     // adding the times to the html
     $('#time' + i).text(workHours.format('hA'));
 
-    
+
     // conditional statements to switch the classes of the description boxes
     if (workHours.hour() < currentHour) {
         $('#toDos' + i).addClass('past');
@@ -40,6 +41,7 @@ for (let i = 0; i < toDosList.length; i++) {
         $('#toDos' + i).addClass('present');
     }
 
+    $("#toDos" + i).val(toDosList[i]);
 
 
 };
@@ -63,8 +65,14 @@ $('.saveBtn').on('click', function (event) {
 
 
 
-// this function get us the data that has been persisted d
-function persist(){
-    JSON.parse(localStorage.getItem('toDosList'));
+// this function get us the data that has been persisted 
+function persist() {
+    let list = JSON.parse(localStorage.getItem('toDosList'));
+    if (list !== null) {
+        toDosList = list;
+    } else {
+        return list;
+    }
 };
+
 
