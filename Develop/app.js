@@ -9,25 +9,23 @@ setInterval(function () {
 }, 1000);
 
 
-let toDos = ['', '', '', '', '', '', '', '', '', '']
-// plugin in the times for the planner
-
-// check for the current time
-// set the class according to the current time of the day
+// store the to dos from the list 
+let toDosList = ['', '', '', '', '', '', '', '', '', '']
 
 
-
-
-for (let i = 0; i < toDos.length; i++) {
+// display the time and set the conditions 
+for (let i = 0; i < toDosList.length; i++) {
+    
     let workHours = moment({ hour: 8 + i })
     let currentHour = moment().hour();
-    $('#time' + i).text(workHours.format('hA'));
-
     // test variable to make sure the if conditional if else statements are working 
     // let test = moment({ hour: 12}).hour();
 
+    // adding the times to the html
+    $('#time' + i).text(workHours.format('hA'));
 
-
+    
+    // conditional statements to switch the classes of the description boxes
     if (workHours.hour() < currentHour) {
         $('#toDos' + i).addClass('past');
         $('#toDos' + i).attr("placeholder", "time has passed already");
@@ -39,24 +37,40 @@ for (let i = 0; i < toDos.length; i++) {
     }
 
 
-    // save button is able to save to the local storage when clicked
-    $('.saveBtn').on('click', function (event) {
-
-        
-        console.log($('#toDos9'+i));
-
-        
-       
-
-
-
-
-    })
 
 };
 
 
+$('.saveBtn').on('click', function (event) {
 
+    let index = event.target.value;
+
+    // testing the index
+    console.log(index);
+
+    // toDosList[index] = $('#toDos' + index)
+
+    // localStorage.setItem('arr', JSON.stringify(toDos));
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+// let arr = [23,6,3,6,3,6,8,4,];
+
+// localStorage.setItem('myNumbers', JSON.stringify(arr));
+
+
+// console.log(JSON.parse(localStorage.getItem('myNumbers')))
 
 
 
