@@ -1,6 +1,9 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
-*This is a simple work day planner to help plan your day 
+* This is a simple work day planner to help plan your day 
+* fully responsive design
+* interactive UI
+* fully integrated using the moment library 
 
 ## Acceptance Criteria
 
@@ -28,4 +31,5 @@ The following animation demonstrates the application functionality:
 * Erik De Luna / Developer 
 
 - - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+## Links
+* to view the project click here
