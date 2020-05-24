@@ -18,10 +18,10 @@ persist();
 // display the time and set the conditions 
 for (let i = 0; i < toDosList.length; i++) {
 
-    let workHours = moment({ hour: 8 + i })
+    let workHours = moment({ hour: 8 + i });
     let currentHour = moment().hour();
     // test variable to make sure the if conditional if else statements are working 
-    // let test = moment({ hour: 12}).hour();
+    // let currentHour = moment({ hour: 17}).hour();
 
     // adding the times to the html
     $('#time' + i).text(workHours.format('hA'));
