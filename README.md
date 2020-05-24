@@ -32,4 +32,4 @@ The following animation demonstrates the application functionality:
 
 - - -
 ## Links
-* to view the project click here
+* to view the project click here https://codingerik.github.io/Work_Day…
